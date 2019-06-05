@@ -1,4 +1,4 @@
-package com.phoneix.projects.react;
+package com.phoenix.projects.react;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

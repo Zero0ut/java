@@ -1,4 +1,4 @@
-package com.phoneix.projects.react.dao.entity.common;
+package com.phoenix.projects.react.dao.entity.common;
 
 import lombok.Getter;
 import lombok.Setter;

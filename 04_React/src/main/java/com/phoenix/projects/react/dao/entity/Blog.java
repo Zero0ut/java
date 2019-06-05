@@ -1,12 +1,14 @@
-package com.phoneix.projects.react.dao.entity;
+package com.phoenix.projects.react.dao.entity;
 
-import com.phoneix.projects.react.dao.entity.common.BaseEntity;
+import com.phoenix.projects.react.dao.entity.common.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 @Document(collection = "blog")
 public class Blog extends BaseEntity {
 

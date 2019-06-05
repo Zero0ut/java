@@ -1,4 +1,4 @@
-package com.phoneix.projects.react.monitoring;
+package com.phoenix.projects.react.monitoring;
 
 import org.springframework.boot.actuate.endpoint.annotation.*;
 import org.springframework.stereotype.Component;

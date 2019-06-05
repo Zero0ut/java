@@ -1,6 +1,6 @@
-package com.phoneix.projects.react.dao;
+package com.phoenix.projects.react.dao;
 
-import com.phoneix.projects.react.dao.entity.Blog;
+import com.phoenix.projects.react.dao.entity.Blog;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;

@@ -1,7 +1,7 @@
-package com.phoneix.projects.react.web;
+package com.phoenix.projects.react.web;
 
-import com.phoneix.projects.react.dao.entity.Blog;
-import com.phoneix.projects.react.service.BlogService;
+import com.phoenix.projects.react.dao.entity.Blog;
+import com.phoenix.projects.react.service.BlogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
