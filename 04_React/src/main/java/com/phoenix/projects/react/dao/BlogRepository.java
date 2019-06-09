@@ -11,7 +11,9 @@ public interface BlogRepository extends ReactiveMongoRepository<Blog, String> {
 
     Flux<Blog> findByAuthor(String author);
 
-    Flux<Blog> findByAuthorAndDeleteIsFalse(String titleKeyword);
+    Flux<Blog> findByAuthorAndDeleteIsFalse(String author);
+
+    Flux<Blog> findByTitleAndDeleteIsFalse(String titleKeyword);
 
     Mono<Blog> findByTitle(String title);
 

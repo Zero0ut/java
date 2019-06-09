@@ -42,7 +42,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Flux<Blog> findByTitle(String title) {
-        return blogRepository.findByAuthorAndDeleteIsFalse(title)
+        return blogRepository.findByTitleAndDeleteIsFalse(title)
                 .switchIfEmpty(Mono.error(new Exception("No Blog found with title Containing : " + title)));
     }
 
