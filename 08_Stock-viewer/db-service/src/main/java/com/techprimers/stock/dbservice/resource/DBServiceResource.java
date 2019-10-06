@@ -39,7 +39,7 @@ public class DBServiceResource {
     public List<String> delete(@PathVariable("username") final String username) {
 
         List<Quote> quotes = quotesRepository.findByUserName(username);
-        quotesRepository.delete(quotes);
+        quotes.stream().forEach(quote -> quotesRepository.delete(quote));
         return getQuotesByUserName(username);
     }
 
