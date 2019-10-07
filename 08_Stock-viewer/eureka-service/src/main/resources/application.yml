@@ -9,5 +9,25 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
-    server:
-      waitTimeinMsWhenSyncEmtpy: 0
+    service-url:
+      defaultZone: http://localhost:8302/eureka/
+#    server:
+#      waitTimeinMsWhenSyncEmtpy: 0
+#      renewal-percent-threshold: 0.49
+#
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    password: mypassword
+
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    db-service:
+      path: /db-service/**
+      url: http://localhost:8300
+    stock-service:
+      path: /stock-service/**
+      url: http://localhost:8301
