@@ -1,6 +1,13 @@
+
 spring:
   application:
     name: stock-service
 
 server:
   port: 8301
+
+
+logging:
+  level:
+    ROOT: INFO
+    com.zeroout.java.stockpricequery.resource: TRACE

@@ -25,7 +25,7 @@ public class StockResource {
        response = Quote.class)
     private Quote getStockPrice(@PathVariable("quote") final String quote) {
 
-        logger.info("Fetching Stock Price: " + quote.toUpperCase());
+        logger.trace("Fetching Stock Price: " + quote.toUpperCase());
 
         Stock stock;
         try {
