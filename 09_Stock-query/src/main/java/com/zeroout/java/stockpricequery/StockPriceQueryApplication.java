@@ -20,27 +20,4 @@ public class StockPriceQueryApplication {
 		SpringApplication.run(StockPriceQueryApplication.class, args);
 	}
 
-	@Bean
-	public Docket swaggerConfiguration() {
-		// return a prepared Docket instance
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select()
-				.paths(PathSelectors.ant("/rest/stock/*"))
-				.apis(RequestHandlerSelectors.basePackage("com.zeroout"))
-				.build()
-				.apiInfo(apiDetails());
-	}
-
-	private ApiInfo apiDetails() {
-		return new ApiInfo(
-				"Stock-Price-Query API",
-				"Sample API for JavaBrains tutorial",
-				"1.0",
-				"Free to use",
-				new springfox.documentation.service.Contact("Alex Cheng", "http://test","alex@alex.com"),
-				"API License",
-				"http://testing",
-				Collections.emptyList()
-		);
-	}
 }
