@@ -1,11 +1,25 @@
 
 spring:
   application:
-    name: stock-service
+    name: "@project.name@"
+  jackson:
+    serialisation:
+      indent_output: true   # Pretty-print JSON responses
+
+info:
+  app:
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
 
 server:
   port: 8301
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    # Enable additional actuator endpoints
 
 logging:
   level:
