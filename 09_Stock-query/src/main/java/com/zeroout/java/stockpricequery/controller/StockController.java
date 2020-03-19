@@ -1,4 +1,4 @@
-package com.zeroout.java.stockpricequery.resource;
+package com.zeroout.java.stockpricequery.controller;
 
 import com.zeroout.java.stockpricequery.model.Quote;
 import io.swagger.annotations.ApiOperation;
@@ -12,12 +12,14 @@ import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @RestController
 @RequestMapping("/rest/stock")
-public class StockResource {
+public class StockController {
 
-    Logger logger = LoggerFactory.getLogger(StockResource.class);
+    Logger logger = LoggerFactory.getLogger(StockController.class);
 
     @GetMapping("/{quote}")
     @ApiOperation(value = "Find Stock Price by Stock Code",
@@ -25,7 +27,13 @@ public class StockResource {
        response = Quote.class)
     private Quote getStockPrice(@PathVariable("quote") final String quote) {
 
-        logger.trace("Fetching Stock Price: " + quote.toUpperCase());
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            logger.info("From host: " + ip);
+        } catch (UnknownHostException ex) {
+            logger.error("Unable to detected host ip");
+        }
+        logger.info("Fetching Stock Price: " + quote.toUpperCase());
 
         Stock stock;
         try {
